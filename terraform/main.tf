@@ -20,7 +20,7 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld2"
   }
   security_groups = [aws_security_group.allow_http.name]
 }
