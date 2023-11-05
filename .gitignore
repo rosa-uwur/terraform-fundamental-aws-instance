@@ -5,3 +5,5 @@
 *.tfstate
 *.tfstate.*
 *.lock*
+#env
+*.env
