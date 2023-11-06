@@ -16,11 +16,12 @@ data "aws_ami" "ubuntu" {
 }
 ## Resource que crea una instance en AWS
 resource "aws_instance" "web" {
+  count = 2
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
 
   tags = {
-    Name = "sandbox1"
+    Name = "sandbox-${count.index+20}"
   }
   security_groups = [aws_security_group.allow_http.name]
 }
